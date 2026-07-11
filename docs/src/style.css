@@ -1,0 +1,104 @@
+:root{
+  --bg: #000;
+  --text: #fff;
+  --muted: #bdbdbd;
+  --card-bg: #0f0f0f;
+  --card-accent: #1f6feb;
+  --card-shape: #ffd166;
+  --primary: #1f6feb;
+  --focus: #ffb703;
+  --radius: 10px;
+  --container: 1100px;
+  --mono: 'Courier New', monospace;
+}
+
+/* Light theme variables (will be toggled by [data-theme="light"]) */
+:root[data-theme="light"]{
+  --bg: #ffffff;
+  --text: #0b0b0b;
+  --muted: #4a4a4a;
+  --card-bg: #ffffff;
+  --card-accent: #ffdede;
+  --card-shape: #2b6f4a;
+  --primary: #0b5cff;
+  --focus: #ff8a00;
+}
+
+/* Global resets and accessibility */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.4;
+  transition: background .25s ease, color .25s ease;
+}
+
+/* Utility */
+.container{max-width:var(--container);margin:0 auto;padding:1rem}
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px}
+
+/* Header */
+.site-header{border-bottom:1px solid rgba(255,255,255,0.04);padding:.5rem 0}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:flex;align-items:center;gap:.75rem}
+.logo{color:var(--primary)}
+.site-title{font-size:1.125rem;margin:0}
+
+/* Controls */
+.controls{display:flex;align-items:center;gap:.5rem}
+.icon-btn{
+  background:transparent;border:1px solid rgba(255,255,255,0.06);padding:.4rem;border-radius:8px;color:var(--text);
+  display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.icon{display:block}
+.icon-sun{display:none} /* shown in light mode by JS */
+#langSelect{padding:.4rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text)}
+
+/* Hero */
+.hero{padding:2rem 0;text-align:center}
+.hero-title{font-size:1.75rem;margin:.25rem 0}
+.hero-sub{color:var(--muted);margin:0 0 1rem}
+
+/* Grid */
+.card-grid{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+@media (max-width:900px){.card-grid{grid-template-columns:1fr}}
+.nft-card{background:var(--card-bg);border-radius:var(--radius);overflow:hidden;display:flex;flex-direction:column;box-shadow:0 6px 18px rgba(0,0,0,0.35)}
+.nft-media{margin:0;padding:0}
+.nft-image{width:100%;height:auto;display:block}
+.nft-body{padding:1rem}
+.nft-title{margin:.25rem 0;font-size:1.125rem}
+.nft-desc{margin:.25rem 0;color:var(--muted)}
+.nft-meta dl{display:grid;grid-template-columns:auto 1fr;gap:.25rem .5rem;margin:.5rem 0}
+.mono{font-family:var(--mono);background:transparent;padding:.1rem .25rem;border-radius:4px;color:var(--text)}
+
+/* Actions */
+.nft-actions{display:flex;gap:.5rem;margin-top:.75rem}
+.btn{padding:.5rem .75rem;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:var(--text);cursor:pointer}
+.btn.primary{background:var(--primary);color:#fff;border:none}
+.btn:focus{outline:3px solid var(--focus);outline-offset:2px}
+
+/* Info aside */
+.info{background:transparent;padding:1rem;border-radius:var(--radius);border:1px solid rgba(255,255,255,0.04)}
+.info ul{margin:0;padding-left:1rem}
+
+/* Notes and footer */
+.notes{margin-top:1rem;padding:1rem;border-top:1px dashed rgba(255,255,255,0.03)}
+.site-footer{padding:1rem 0;border-top:1px solid rgba(255,255,255,0.04);margin-top:2rem}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:1rem}
+.footer-text{color:var(--muted);margin:0}
+
+/* Focus visible for keyboard users */
+:focus{outline:none}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+
+/* Small screens */
+@media (max-width:600px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .controls{width:100%;justify-content:space-between}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}

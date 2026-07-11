@@ -1,5 +1,3 @@
-Daily learning
-
 # Creating an NFT in Practice
 
 Project developed at the Bootcamp Blockchain Specialist Training, under the guidance of specialist [Ricardo Zago](https://www.linkedin.com/in/ricardozago/ "Ricardo Zago").
@@ -14,11 +12,11 @@ Useful links:
 
 - [OpenSea Polygon](https://www.uptick.network/)
 
-![Screenshot](./img/Blockchain_OpenSea_Polygon.png)
+![Screenshot](./docs/public/Blockchain_OpenSea_Polygon.png)
 
 - [Uptick](https://opensea.io/)
 
-![Screenshot](./img/Blockchain_Uptick.png)
+![Screenshot](./docs/public/Blockchain_Uptick.png)
 
 Send the NFT to the Instructor's Wallet:
 

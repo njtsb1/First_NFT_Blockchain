@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>First NFT Blockchain</title>
+  <link rel="stylesheet" href="./src/style.css" />
+</head>
+<body>
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand" aria-hidden="false">
+        <svg class="logo" width="36" height="36" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="20" height="20" rx="4" fill="currentColor"></rect>
+        </svg>
+        <h1 class="site-title">First NFT Blockchain</h1>
+      </div>
+
+      <nav class="controls" role="navigation" aria-label="Theme and language controls">
+        <button id="themeToggle" class="icon-btn" aria-pressed="true" aria-label="Toggle dark mode">
+          <!-- Moon icon (dark) / Sun icon (light) swapped by JS -->
+          <svg id="iconMoon" class="icon icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+          </svg>
+          <svg id="iconSun" class="icon icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.76 4.84l-1.8-1.79L3.17 5.84l1.79 1.79 1.8-2.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm7.03-2.03l1.79 1.79 1.79-1.79-1.79-1.79-1.79 1.79zM20 11v2h3v-2h-3zM4.22 19.78l1.79-1.79-1.79-1.79-1.79 1.79 1.79 1.79zM11 1h2v3h-2V1zm7.78 4.22l-1.79 1.79 1.79 1.79 1.79-1.79-1.79-1.79zM12 7a5 5 0 100 10 5 5 0 000-10z"></path>
+          </svg>
+        </button>
+
+        <label for="langSelect" class="visually-hidden">Language</label>
+        <select id="langSelect" aria-label="Select language">
+          <option value="en">English (EN-US)</option>
+          <option value="pt-BR">Português (PT-BR)</option>
+          <option value="es">Español (ES)</option>
+        </select>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="container" role="main">
+    <section class="hero" aria-labelledby="heroTitle">
+      <h2 id="heroTitle" class="hero-title" data-i18n="heroTitle">First NFT Blockchain</h2>
+      <p class="hero-sub" data-i18n="heroSubtitle">A simple demo of an NFT card with theme and language controls.</p>
+
+      <div class="card-grid">
+        <article class="nft-card" aria-labelledby="nftTitle" role="article">
+          <figure class="nft-media">
+            <!-- Decorative SVG placeholder; colors change with theme -->
+            <svg class="nft-image" viewBox="0 0 200 140" role="img" aria-labelledby="nftAlt">
+              <title id="nftAlt">Colorful bricks preview</title>
+              <rect x="0" y="0" width="200" height="140" rx="8" fill="var(--card-accent)"></rect>
+              <g fill="var(--card-shape)">
+                <rect x="18" y="18" width="44" height="28" rx="4"></rect>
+                <rect x="70" y="18" width="44" height="28" rx="4"></rect>
+                <rect x="122" y="18" width="60" height="28" rx="4"></rect>
+                <rect x="18" y="58" width="60" height="28" rx="4"></rect>
+                <rect x="86" y="58" width="96" height="28" rx="4"></rect>
+              </g>
+            </svg>
+            <figcaption class="visually-hidden">NFT preview image</figcaption>
+          </figure>
+
+          <div class="nft-body">
+            <h3 id="nftTitle" class="nft-title" data-i18n="nftName">First NFT DIO</h3>
+            <p class="nft-desc" data-i18n="nftDesc">A minimal NFT demo card for learning HTML, CSS and JS.</p>
+
+            <div class="nft-meta">
+              <dl>
+                <dt data-i18n="metaCreator">Creator</dt>
+                <dd><code class="mono">0x6627...c78c9</code></dd>
+
+                <dt data-i18n="metaSupply">Supply</dt>
+                <dd><span class="mono">1 / 1</span></dd>
+              </dl>
+            </div>
+
+            <div class="nft-actions">
+              <button class="btn primary" id="mintBtn" data-i18n="btnMint">Mint</button>
+              <button class="btn" id="detailsBtn" data-i18n="btnDetails">Details</button>
+            </div>
+          </div>
+        </article>
+
+        <aside class="info" aria-labelledby="infoTitle">
+          <h4 id="infoTitle" data-i18n="infoTitle">Quick Info</h4>
+          <ul>
+            <li data-i18n="infoItem1">No backend required</li>
+            <li data-i18n="infoItem2">Accessible controls</li>
+            <li data-i18n="infoItem3">Responsive layout</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="notes" aria-labelledby="notesTitle">
+      <h4 id="notesTitle" data-i18n="notesTitle">Notes</h4>
+      <p data-i18n="notesText">This demo runs entirely in the browser. Use the language selector and theme toggle to explore.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-text" data-i18n="footerText">Made for learning HTML5, CSS3 and JavaScript.</p>
+      <p class="footer-copy">© <span id="year"></span></p>
+    </div>
+  </footer>
+
+  <div id="liveRegion" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="./src/script.js" defer></script>
+</body>
+</html>
